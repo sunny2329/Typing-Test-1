@@ -1,0 +1,51 @@
+@tailwind base;
+
+/* *::-webkit-scrollbar{
+    width: 0;
+} */
+
+
+.typing-text::-webkit-scrollbar{
+    width: 0;
+}
+
+.typing-text p span{
+    position: relative;
+}
+
+.typing-text p span.correct{
+    color:green;
+}
+
+
+.typing-text p span.incorrect{
+    color:red;
+}
+
+.typing-text p span.active{
+    color: pink;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(165, 103, 114);
+    animation: blink 1s ease-in-out infinite;
+}
+
+
+
+@tailwind components;
+@tailwind utilities;
+
+
